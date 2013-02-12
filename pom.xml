@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>avroclj</groupId>
-  <artifactId>avroclj</artifactId>
+  <groupId>yehohana7</groupId>
+  <artifactId>avro-clj</artifactId>
   <packaging>jar</packaging>
   <version>0.1</version>
-  <name>avroclj</name>
+  <name>avro-clj</name>
   <description>A Clojure Wrapper to Apache Avro to serialize/deserialize clojure map into avro byte array</description>
   <url>http://github.com/yehohanan7/avro-clj</url>
   <licenses>
@@ -17,7 +17,7 @@
   <scm>
     <connection>scm:git:git://github.com/yehohanan7/avro-clj.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/yehohanan7/avro-clj.git</developerConnection>
-    <tag>d9fa18467fd82d46a117dc3731d0586ca4f2592d</tag>
+    <tag>e706da3b10e2b4019946325f5fcae6612836ceaf</tag>
     <url>https://github.com/yehohanan7/avro-clj</url>
   </scm>
   <build>
