@@ -6,6 +6,7 @@ A Clojure Wrapper for Apache avro serialization/deserialization
 Example
 ========
 
+<code>
 (ns avroclj.avrotest
   (require '[avroclj.avro :as avro]))
 
@@ -22,7 +23,7 @@ Example
 
 
 
-
+</code>
 
 Installation
 ============
