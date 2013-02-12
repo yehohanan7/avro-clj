@@ -6,6 +6,9 @@
 (ns avroclj.avrotest
   (require '[avroclj.avro :as avro]))
 
+
+;The avro schema to use for serializing/desrializing should be attached to the clojure map using the meta key :avro-type
+;in the below example, avroclj will look for "avroclj/model/person/Person.avsc" in the class path
 (defn person [fields]
   (with-meta fields {:avro-type :avroclj-model-person-Person})
   )
