@@ -1,0 +1,11 @@
+{
+  "namespace": "avroclj.model.person",
+  "type" : "record",
+  "name" : "Person",
+  "doc" : "Represents a Person",
+  "fields" : [
+    {"name" : "firstName", "type" : "string"},
+    {"name" : "middleName", "type" : "string"},
+    {"name" : "lastName", "type" : "string"}
+  ]
+}
