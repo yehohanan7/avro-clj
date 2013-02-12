@@ -2,7 +2,7 @@
 
 ## Example
 
-<code>
+```clojure
 (ns avroclj.avrotest
   (require '[avroclj.avro :as avro]))
 
@@ -17,18 +17,17 @@
 ;Deserializes the bytes into the map passed as argument
 (avro/deserialize bytes (person {}))
 
+```
 
-
-</code>
 
 ## Installation
 
 
-With Leiningen:
+### With Leiningen:
 
-[yehohanan7/avro-clj "0.1"]
+    [yehohanan7/avro-clj "0.1"]
 
-With Maven:
+### With Maven:
 
 ``` xml
 <dependency>
