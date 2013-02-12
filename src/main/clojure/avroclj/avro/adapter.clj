@@ -14,7 +14,7 @@
 (defn- valid-model? [x]
   (and (not-nil? x)
     (not-nil? (meta x))
-    (not-nil? (:tikvah-type (meta x))))
+    (not-nil? (:avro-type (meta x))))
   )
 
 

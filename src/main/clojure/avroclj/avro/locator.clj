@@ -14,8 +14,6 @@
 (defn- ^java.io.File locate-file [model]
   (let [model-name (name (:avro-type (meta model)))
         path (with-extension (clojure.string/replace model-name #"-" "/"))]
-    (println "path: " path)
-    (println "file:::" (clojure.java.io/as-file (clojure.java.io/resource path)))
     (clojure.java.io/as-file (clojure.java.io/resource path))
     )
   )
