@@ -1,10 +1,6 @@
-avro-clj
-========
+# A Clojure Wrapper for Apache avro serialization/deserialization
 
-A Clojure Wrapper for Apache avro serialization/deserialization
-
-Example
-========
+## Example
 
 <code>
 (ns avroclj.avrotest
@@ -25,8 +21,8 @@ Example
 
 </code>
 
-Installation
-============
+## Installation
+
 
 With Leiningen:
 
@@ -34,8 +30,10 @@ With Leiningen:
 
 With Maven:
 
+``` xml
 <dependency>
   <groupId>yehohanan7</groupId>
   <artifactId>avro-clj</artifactId>
   <version>0.1</version>
 </dependency>
+```
