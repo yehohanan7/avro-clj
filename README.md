@@ -48,7 +48,7 @@ At the moment, avro-clj provides support only for flat clojure maps, it will be 
 ```
 
 ### Artifact
-avro-clj is published in [clojars](https://clojars.org/yehohana7/avro-clj) 
+avro-clj is published in [clojars](https://clojars.org/yehohanan7/avro-clj) 
 
 ## Installation 
 
