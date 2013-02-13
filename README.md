@@ -1,7 +1,7 @@
 # A Clojure Wrapper for Apache avro serialization/deserialization
 
-## Supported Features
-At the moment, avro-clj provides support only for flat clojure maps, it will be extended to support heirarchical maps shortly
+
+Note: At the moment, avro-clj doesn't support Nested maps, which will be added in next release.
 
 
 ## Example
