@@ -7,7 +7,7 @@ At the moment, avro-clj provides support only for flat clojure maps, it will be 
 ## Example
 
 ```clojure
-(ns avroclj.avrotest
+(ns sample
   (:require [avroclj.avro :as avro]))
 
 ;The avro schema to use for serializing/desrializing should be attached to the
