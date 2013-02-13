@@ -7,8 +7,12 @@
   (require '[avroclj.avro :as avro]))
 
 
-;The avro schema to use for serializing/desrializing should be attached to the clojure map using the meta key :avro-type
-;in the below example, avroclj will look for "avroclj/model/person/Person.avsc" in the class path
+;The avro schema to use for serializing/desrializing should be attached to the
+;clojure map using the meta key :avro-type
+
+;in the below example, avroclj will look for the avro schema file : "avroclj/model/person/Person.avsc" in the class path
+;to serialize/deserialize
+
 (defn person [fields]
   (with-meta fields {:avro-type :avroclj-model-person-Person})
   )
@@ -22,6 +26,22 @@
 
 ```
 
+
+##avroclj/model/person/Person.avsc
+
+```json
+{
+  "namespace": "avroclj.model.person",
+  "type" : "record",
+  "name" : "Person",
+  "doc" : "Represents a Person",
+  "fields" : [
+    {"name" : "firstName", "type" : "string"},
+    {"name" : "middleName", "type" : "string"},
+    {"name" : "lastName", "type" : "string"}
+  ]
+}
+```
 
 ## Installation
 
