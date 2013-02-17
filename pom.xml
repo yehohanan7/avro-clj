@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>yehohana7</groupId>
+  <groupId>yehohanan7</groupId>
   <artifactId>avro-clj</artifactId>
   <packaging>jar</packaging>
   <version>0.1</version>
@@ -17,7 +17,7 @@
   <scm>
     <connection>scm:git:git://github.com/yehohanan7/avro-clj.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/yehohanan7/avro-clj.git</developerConnection>
-    <tag>e706da3b10e2b4019946325f5fcae6612836ceaf</tag>
+    <tag>9cc4138a81808a3ea20f9b9db7a4aa8c87a112b0</tag>
     <url>https://github.com/yehohanan7/avro-clj</url>
   </scm>
   <build>

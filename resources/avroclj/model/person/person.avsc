@@ -6,6 +6,8 @@
   "fields" : [
     {"name" : "firstName", "type" : "string"},
     {"name" : "middleName", "type" : "string"},
-    {"name" : "lastName", "type" : "string"}
+    {"name" : "lastName", "type" : "string"},
+    {"name" : "hobbies", "type" : [{"type":"array", "items" : "string"}, "null"]},
+    {"name" : "skills", "type" : [{"type":"map", "values" : "string"}, "null"]}
   ]
 }

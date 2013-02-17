@@ -1,0 +1,10 @@
+{
+  "namespace": "avroclj.model.category",
+  "type" : "record",
+  "name" : "Category",
+  "doc" : "Represents a category",
+  "fields" : [
+    {"name" : "id", "type" : "string"},
+    {"name" : "name", "type" : "string"}
+  ]
+}

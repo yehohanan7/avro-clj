@@ -1,0 +1,18 @@
+
+{
+  "namespace": "avroclj.model.product",
+  "type" : "record",
+  "name" : "Product",
+  "doc" : "Represents a product",
+  "fields" : [
+    {"name" : "id", "type" : "string"},
+    {"name" : "name", "type" : "string"},
+    {"name" : "price", "type" : [{"type" : "record",
+                                  "name" : "Price",
+                                  "fields" : [
+                                                {"name" : "original", "type" : "string"},
+                                                {"name" : "discount", "type" : "string"}
+                                             ]
+                                  }]}
+  ]
+}

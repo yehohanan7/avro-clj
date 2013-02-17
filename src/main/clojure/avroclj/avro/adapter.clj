@@ -46,7 +46,7 @@
   {:pre [(and (not (nil? record)) (not (nil? model)))]}
   (let [schema (locate-schema model)
         fields (map #(.name %) (.getFields schema))
-        getter #(.toString (.get record %))
+        getter #(clj-value (.get record %))
         key-value-mapper #(vector (keyword (camel-to-dash %)) (getter %))]
     (apply merge {} (map key-value-mapper fields))
     )
