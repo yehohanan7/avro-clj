@@ -4,7 +4,7 @@
   <groupId>yehohanan7</groupId>
   <artifactId>avro-clj</artifactId>
   <packaging>jar</packaging>
-  <version>0.1</version>
+  <version>0.2</version>
   <name>avro-clj</name>
   <description>A Clojure Wrapper to Apache Avro to serialize/deserialize clojure map into avro byte array</description>
   <url>http://github.com/yehohanan7/avro-clj</url>
@@ -17,7 +17,7 @@
   <scm>
     <connection>scm:git:git://github.com/yehohanan7/avro-clj.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/yehohanan7/avro-clj.git</developerConnection>
-    <tag>9cc4138a81808a3ea20f9b9db7a4aa8c87a112b0</tag>
+    <tag>833a6618556171dbdd34dfc254783e1ab1168b49</tag>
     <url>https://github.com/yehohanan7/avro-clj</url>
   </scm>
   <build>
