@@ -1,14 +1,14 @@
 # A Clojure Wrapper for Apache avro serialization/deserialization
 
-## Supported Features
-At the moment, avro-clj provides support only for flat clojure maps, it will be extended to support heirarchical maps shortly
+
+Note: At the moment, avro-clj doesn't support Nested maps, which will be added in next release.
 
 
 ## Example
 
 ```clojure
-(ns avroclj.avrotest
-  (require '[avroclj.avro :as avro]))
+(ns sample
+  (:require [avroclj.avro :as avro]))
 
 ;The avro schema to use for serializing/desrializing should be attached to the
 ;clojure map using the meta key :avro-type
@@ -22,11 +22,11 @@ At the moment, avro-clj provides support only for flat clojure maps, it will be 
   )
 
 ;Serializes the map into a byte array
-(def bytes (avro/serialize (person {:first-name "John" :middle-name "Pradeep" :last-name "Vincent"})))
+(def byteArray (avro/serialize (person {:first-name "John" :middle-name "Pradeep" :last-name "Vincent"})))
 
 
 ;Deserializes the bytes into the map passed as argument
-(avro/deserialize bytes (person {}))
+(avro/deserialize byteArray (person {}))
 
 ```
 
@@ -47,7 +47,10 @@ At the moment, avro-clj provides support only for flat clojure maps, it will be 
 }
 ```
 
-## Installation
+### Artifact
+avro-clj is published in [clojars](https://clojars.org/yehohanan7/avro-clj) 
+
+## Installation 
 
 
 ### With Leiningen:
