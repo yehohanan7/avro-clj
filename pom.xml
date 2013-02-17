@@ -17,7 +17,7 @@
   <scm>
     <connection>scm:git:git://github.com/yehohanan7/avro-clj.git</connection>
     <developerConnection>scm:git:ssh://git@github.com/yehohanan7/avro-clj.git</developerConnection>
-    <tag>833a6618556171dbdd34dfc254783e1ab1168b49</tag>
+    <tag>cc8789f91c900c9b234240e39ecae99b202ec85f</tag>
     <url>https://github.com/yehohanan7/avro-clj</url>
   </scm>
   <build>
