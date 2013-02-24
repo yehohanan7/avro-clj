@@ -57,7 +57,7 @@
 
 (extend-type java.util.HashMap AvroType
   (clj-value [this]
-    (into {} (for [[k v] this] (do (println k v) [(keyword (.toString k)) (clj-value v)])))
+    (into {} (for [[k v] this] [(keyword (.toString k)) (clj-value v)]))
     )
   )
 

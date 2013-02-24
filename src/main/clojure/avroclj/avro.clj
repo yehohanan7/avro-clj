@@ -1,8 +1,9 @@
 (ns #^{:author "John"
        :doc "A utility to serialize/deserialize clojure map to Avro bytes and vice versa"}
   avroclj.avro
-  (:use [avroclj.avro.locator])
+  (:require [avroclj.avro.locator :as locator])
   (:use [avroclj.avro.adapter])
+  (:use [clojure.java.io])
   (:import [org.apache.avro Schema]
            [org.apache.avro.generic GenericDatumWriter GenericDatumReader GenericData GenericData$Record]
            [org.apache.avro.io BinaryEncoder EncoderFactory DecoderFactory BinaryDecoder]
@@ -11,6 +12,7 @@
 
 
 (set! *warn-on-reflection* true)
+
 
 (defprotocol FlexiDataSerializer
   (serialize [this])
@@ -30,7 +32,7 @@
   (serialize [model]
     (let [record (to-record model)
           stream (ByteArrayOutputStream.)
-          schema (locate-schema model)
+          schema (locator/locate-schema model)
           writer (GenericDatumWriter. schema)
           encoder (.binaryEncoder (EncoderFactory/get) stream nil)
           _ (.write writer record encoder)
@@ -43,7 +45,7 @@
 
 (extend-type (class (byte-array 0)) FlexiDataDeserializer
   (deserialize [bytes model]
-    (let [schema (locate-schema model)
+    (let [schema (locator/locate-schema model)
           reader (GenericDatumReader. schema)
           decoder (.binaryDecoder (DecoderFactory/get) bytes nil)
           record (.read reader nil decoder)
@@ -51,5 +53,10 @@
       deserialized-model
       )
     )
+  )
+
+
+(defn add-schema [schema-map]
+  (locator/add-schema schema-map)
   )
 

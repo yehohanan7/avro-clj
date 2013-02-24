@@ -1,14 +1,14 @@
 (ns avroclj.collectionstest
   (:use avroclj.avro)
-  (:use avroclj.avro.locator)
-  (:use avroclj.avro.adapter)
+  (:require [avroclj.avro.locator :as locator])
+  (:require [avroclj.avro.adapter :as adapter])
   (:use clojure.test))
 
 
 
 (defn person []
   (with-meta {:first-name "John" :middle-name "Pradeep" :last-name "Vincent" :hobbies ["music" "hacking"]}
-    {:avro-type :avroclj-model-person-Person})
+    {:avro-type :avroclj.model.person.Person})
   )
 
 (defn person-with-skills []
@@ -27,7 +27,7 @@
 (deftest should-de-serialize-record-with-arrays
   (let [p (person)
         serialized (serialize p)
-        model (deserialize serialized (with-meta {} {:avro-type :avroclj-model-person-Person}))]
+        model (deserialize serialized (with-meta {} {:avro-type :avroclj.model.person.Person}))]
     (is (= (:first-name model) "John"))
     (is (= (:middle-name model) "Pradeep"))
     (is (= (:last-name model) "Vincent"))
@@ -38,7 +38,7 @@
 (deftest should-de-serialize-record-with-maps
   (let [p (person-with-skills)
         serialized (serialize p)
-        model (deserialize serialized (with-meta {} {:avro-type :avroclj-model-person-Person}))]
+        model (deserialize serialized (with-meta {} {:avro-type :avroclj.model.person.Person}))]
     (is (= (:first-name model) "John"))
     (is (= (:middle-name model) "Pradeep"))
     (is (= (:last-name model) "Vincent"))
