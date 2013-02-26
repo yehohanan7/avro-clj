@@ -1,4 +1,4 @@
-(defproject yehohanan7/avro-clj "0.2"
+(defproject yehohanan7/avro-clj "0.3"
   :description "A Clojure Wrapper to Apache Avro to serialize/deserialize clojure map into avro byte array"
   :url "http://github.com/yehohanan7/avro-clj"
   :license {:name "Eclipse Public License"
