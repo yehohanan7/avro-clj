@@ -55,7 +55,7 @@ avro-clj is published in [clojars](https://clojars.org/yehohanan7/avro-clj)
 
 ### With Leiningen:
 
-    [yehohanan7/avro-clj "0.1"]
+    [yehohanan7/avro-clj "0.2"]
 
 ### With Maven:
 
@@ -63,6 +63,6 @@ avro-clj is published in [clojars](https://clojars.org/yehohanan7/avro-clj)
 <dependency>
   <groupId>yehohanan7</groupId>
   <artifactId>avro-clj</artifactId>
-  <version>0.1</version>
+  <version>0.2</version>
 </dependency>
 ```
