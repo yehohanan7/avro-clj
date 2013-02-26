@@ -33,7 +33,7 @@
 
 (defn to-record [model]
   {:pre [(valid-model? model)]}
-  (let [schema (locate-schema model)
+  (let [schema (schema model)
         record (GenericData$Record. schema)]
     (doseq [[k v] model]
       (.put record (dash-to-camel k) (avro-value v))
@@ -44,7 +44,7 @@
 
 (defn to-model [record model]
   {:pre [(and (not (nil? record)) (not (nil? model)))]}
-  (let [schema (locate-schema model)
+  (let [schema (schema model)
         fields (map #(.name %) (.getFields schema))
         getter #(clj-value (.get record %))
         key-value-mapper #(vector (keyword (camel-to-dash %)) (getter %))]

@@ -8,7 +8,7 @@
   )
 
 (deftest should-locate-schema-file
-  (is (not (nil? (locator/locate-schema (person {:first-name "John" :middle-name "Pradeep" :last-name "Vincent"})))))
+  (is (not (nil? (locator/schema (person {:first-name "John" :middle-name "Pradeep" :last-name "Vincent"})))))
   )
 
 

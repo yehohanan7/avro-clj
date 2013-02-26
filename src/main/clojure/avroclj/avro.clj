@@ -32,7 +32,7 @@
   (serialize [model]
     (let [record (to-record model)
           stream (ByteArrayOutputStream.)
-          schema (locator/locate-schema model)
+          schema (locator/schema model)
           writer (GenericDatumWriter. schema)
           encoder (.binaryEncoder (EncoderFactory/get) stream nil)
           _ (.write writer record encoder)
@@ -45,7 +45,7 @@
 
 (extend-type (class (byte-array 0)) FlexiDataDeserializer
   (deserialize [bytes model]
-    (let [schema (locator/locate-schema model)
+    (let [schema (locator/schema model)
           reader (GenericDatumReader. schema)
           decoder (.binaryDecoder (DecoderFactory/get) bytes nil)
           record (.read reader nil decoder)

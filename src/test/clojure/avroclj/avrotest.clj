@@ -10,7 +10,7 @@
   )
 
 (deftest should-locate-schema-file
-  (is (not (nil? (locator/locate-schema (person {:first-name "John" :middle-name "Pradeep" :last-name "Vincent"})))))
+  (is (not (nil? (locator/schema (person {:first-name "John" :middle-name "Pradeep" :last-name "Vincent"})))))
   )
 
 (deftest should-serialize-maps
@@ -46,7 +46,7 @@
   (let [_ (add-schema location-schema)
         model (with-meta {:name "India" :id "IND"} {:avro-type :avroclj.model.location.Location})
         serialized (serialize model)
-        deserialized (deserialize serialized (with-meta {:avro-type :avroclj.model.location.Location} {}))]
+        deserialized (deserialize serialized (with-meta {} {:avro-type :avroclj.model.location.Location}))]
     (are [x y] (= x y)
       (:name model) (:name deserialized)
       (:id model) (:id deserialized)
