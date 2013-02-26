@@ -29,8 +29,6 @@ Note: At the moment, avro-clj doesn't support Nested maps, which will be added i
 (avro/deserialize byteArray (person {}))
 
 ```
-
-
 ### avroclj/model/person/Person.avsc
 
 ```json
@@ -47,6 +45,40 @@ Note: At the moment, avro-clj doesn't support Nested maps, which will be added i
 }
 ```
 
+
+### If you don't have a schema (avsc) file in class path, you can bind a schema dynamically during run time as shown.
+
+```clojure
+(ns sample
+  (:require [avroclj.avro :as avro]))
+
+;Add a schema definition to avro clj which will be used when you call serialize/deserialize on map/byte array 
+;with appropriate :avro-type meta data as shown in the below example.
+(avro/add-schema {:namespace :avroclj.model.location
+                      :name :Location
+                      :type "record"
+                      :doc "Represnts a Location"
+                      :fields [
+                                {:name "id"
+                                 :type "string"
+                                 }
+                                {:name "name"
+                                 :type "string"
+                                 }
+                                ]
+                      })
+                      
+(defn location [fields]
+  (with-meta fields {:avro-type :avroclj.model.location.Location})
+  )
+
+(def byteArray (avro/serialize (location {:name "India" :id "IND"})))
+
+(avro/deserialize byteArray (location {}))
+
+```
+
+
 ### Artifact
 avro-clj is published in [clojars](https://clojars.org/yehohanan7/avro-clj) 
 
@@ -55,7 +87,7 @@ avro-clj is published in [clojars](https://clojars.org/yehohanan7/avro-clj)
 
 ### With Leiningen:
 
-    [yehohanan7/avro-clj "0.2"]
+    [yehohanan7/avro-clj "0.3"]
 
 ### With Maven:
 
@@ -63,6 +95,6 @@ avro-clj is published in [clojars](https://clojars.org/yehohanan7/avro-clj)
 <dependency>
   <groupId>yehohanan7</groupId>
   <artifactId>avro-clj</artifactId>
-  <version>0.2</version>
+  <version>0.3</version>
 </dependency>
 ```
