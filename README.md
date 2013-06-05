@@ -18,7 +18,7 @@ Note: At the moment, avro-clj doesn't support Nested maps, which will be added i
 
 
 (defn person [fields]
-  (with-meta fields {:avro-type :avroclj-model-person-Person})
+  (with-meta fields {:avro-type :avroclj.model.person.Person})
   )
 
 ;Serializes the map into a byte array
